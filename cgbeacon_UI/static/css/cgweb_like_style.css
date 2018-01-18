@@ -1,0 +1,19 @@
+
+/* unvisited link grey */
+#top-menu a:link {
+	color: #999;
+}
+/* visited link grey */
+#top-menu a:visited {
+	color: #999;
+}
+/* mouse over orange*/
+#top-menu a:hover {
+	color: #ef7c00;
+}
+#top-menu a:active {
+  color: #ef7c00;
+}
+#top-menu a:focus {
+  color: #ef7c00;
+}

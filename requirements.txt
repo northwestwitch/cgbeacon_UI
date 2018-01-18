@@ -1,0 +1,6 @@
+# connection to db
+SQLAlchemy
+
+# server
+Flask
+Flask-Bootstrap

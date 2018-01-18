@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clinical Genomics Beacon</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='clinGen.png') }}">
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/bootstrap.callout.css') }}" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/sticky-footer.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/cgweb_like_style.css') }}" rel="stylesheet">
+</head>
+
+<header>
+
+  <nav class="navbar navbar-ligth bg-ligth">
+    <div id="top-menu">
+        <ul class="nav menu">
+          <li>
+            <img src="/static/img/logo.d59ae85.svg" alt="Clinical Genomics logo" height="36.8" align="middle">
+            <a class="navbar-brand" style="color: #ef7c00" href="/">Beacon @ Clinical Genomics - SciLifeLab Stockholm</a>
+          </li>
+          <!--<li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" style="color: #ef7c00" href="/contacts">Contacts</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+
+</header>
+
+<body>
+
+		{% block body %}{% endblock %}
+
+		<footer class="footer">
+      <div class="container">
+								<div class="row">
+										<div class="col-sm-3 text-center">
+												<a href="https://www.scilifelab.se" target=_blank><img align="center" valign="middle" src="/static/img/SLL_logo2.png" alt="SciLifeLab"></a>
+										</div>
+										<div class="col-sm-3 text-center ">
+												<a href="https://www.scilifelab.se" target=_blank><img align="center" valign="middle" src="/static/img/elixir_logo.png" alt="SciLifeLab"></a>
+										</div>
+										<div class="col-sm-3 text-center ">
+												<a href="http://ki.se" target=_blank><img align="center" valign="middle" src="/static/img/KI2.jpeg" alt="Karolinska University Hospital"></a>
+										</div>
+										<div class="col-sm-3 text-center ">
+												<a href="https://www.ga4gh.org/" target=_blank><img align="center" valign="middle" src="/static/img/ga4gh.png" alt="Global Alliance for Genomics and Health"></a>
+										</div>
+								</div>
+      </div>
+		 </footer>
+
+
+</body>
+
+</html>

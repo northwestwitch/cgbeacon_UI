@@ -1,0 +1,70 @@
+
+{% extends "main.html" %}
+{% block body %}
+
+      <div class="container">
+      <p><br></p>
+        <div class="page-title">
+          <h1 style="color: #ef7c00;">Clinical Genomics Beacon</h1>
+          <p class="card-text">Learn more about the Global Alliance for Genomics and Health (GA4GH) at <a href=http://genomicsandhealth.org target=_blank>http://genomicsandhealth.org</a> as well as the Beacon Network: <a href=https://beacon-network.org/#/ target=_blank>https://beacon-network.org</a></p>
+        </div>
+            <br>
+            <form action="/" method="post">
+            <div class="row">
+              <div class="col-md-3">
+                <p class="text-right d-flex align-items-center"><h2 style="color: #ef7c00;">Search</h2></p>
+              </div>
+              <div class="col-md-3">
+                <div>
+                  <label for="chromosomeselect">Chromosome</label>
+                  <select class="form-control" name="chromosomeselect">
+                    {%- for chrom in chromosomes %}
+                      <option>{{ chrom }}</option>
+                    {%- endfor %}
+                  </select>
+                </div>
+                <p>
+                <input type="hidden" value="GRCh37" name="build" />
+                <div>
+                  <label for="start">Start (GRCh37)</label>
+                  <input type="number" class="form-control" name="start" min="1" data-bind="value:start" placeholder="ex: 3560876" required>
+                </div>
+                <p>
+                <div>
+                  <label for="allele">Allele</label>
+                  <input type="text" class="form-control" id="allele" name="var" placeholder="ex: T" required>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <p></p>
+              </div>
+              <div class="col-md-3">
+                <label for="datasetselect">Dataset name</label>
+                    <select multiple class="form-control" name="datasetselect">
+                      {%- for dset in dsets %}
+                      <option selected="selected">{{ dset.id }}</option>
+                       {%- endfor %}
+                    </select>
+              </div>
+            </div>
+             <br>
+            <div class="row">
+              <div class="col-md-5"></div>
+                <div class="col-md-3">
+                  <button type="submit" name="query" value="submit" class="btn btn-info">Search Beacon</button>
+                </div>
+            </div>
+             </form>
+             <p>
+               {% if display_result[0] %}
+                 <div class="mx-auto bs-callout bs-callout-info" style="width: 800px;">
+                    <h4 style="text-align:left;">{{ display_result[1] }}</h4>
+                 </div>
+               {% elif display_result[1] %}
+                   <div class="mx-auto bs-callout bs-callout-danger" style="width: 800px;">
+                      <h4 style="text-align:left;">{{ display_result[1] }}</h4>
+                   </div>
+               {% endif %}
+      </div>
+
+{% endblock %}
